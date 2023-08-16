@@ -10,7 +10,7 @@
 
 #include "homeGUI.h"
 #include "Log.h"
-#include "Main.h"
+
 
 #include <iostream>
 
@@ -28,8 +28,8 @@ int main() {
 	
 	Log::log("msg");
 
-	int a = _dll_main();
-	std::cout << a;
+	//int a = _dll_main();
+	//std::cout << a;
 
 
 

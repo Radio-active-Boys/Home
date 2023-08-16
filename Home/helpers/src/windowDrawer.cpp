@@ -1,7 +1,7 @@
 
 
 #include "windowDrawer.h"
-#include "Main.h"
+
 
 
 void windowDrawer::createWindow() {
@@ -9,7 +9,7 @@ void windowDrawer::createWindow() {
     *open = true;
     ImGui::ShowDemoWindow(open);
 
-	_dll_main();
+	
     ImGui::Begin("PK");
     ImGui::End();
 }
