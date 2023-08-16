@@ -1,6 +1,7 @@
 
 
 #include "windowDrawer.h"
+#include <thread>
 
 
 bool windowDrawer::createWindow() {
@@ -12,7 +13,8 @@ bool windowDrawer::createWindow() {
     ImGui::Begin("First");
 	bool clicked = ImGui::Button("Close"); 
     if (clicked) {
-        mainLoop(5);
+        std::thread thread1(mainLoop, 1);
+        thread1.detach();
         return false;
     }
     ImGui::End();
