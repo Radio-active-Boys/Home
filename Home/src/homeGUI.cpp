@@ -359,8 +359,8 @@ int homeGUI::run()
         ImGui::SetNextWindowDockID(dockspace_id, ImGuiCond_FirstUseEver);
 
 
-        windowDrawer first = windowDrawer();
-        first.createWindow();
+        
+        windowDrawer::createWindow();
 
         // Rendering
         ImGui::Render();

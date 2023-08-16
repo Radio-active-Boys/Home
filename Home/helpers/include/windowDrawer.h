@@ -3,6 +3,6 @@
 class windowDrawer
 {
 public:
-	void createWindow();
+	static void createWindow();
 };
 
