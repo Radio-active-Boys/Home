@@ -10,6 +10,7 @@
 
 #include "homeGUI.h"
 #include "Log.h"
+#include "Calculator.h"
 
 
 
@@ -19,8 +20,11 @@ int main() {
 	homeGUI hmgui = homeGUI();
 
 	hmgui.run();
+
 	
-	Log::log("vbusdv");
+	
+	
+	Log::log("msg");
 
 
 	return 0;
