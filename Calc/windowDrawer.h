@@ -1,10 +1,10 @@
 #pragma once
 #include "imgui.h"
-#include "main.h"
 
+#include "base.h"
 class windowDrawer
 {
 public:
-	static bool createWindow();
+	static void createWindow();
 };
 

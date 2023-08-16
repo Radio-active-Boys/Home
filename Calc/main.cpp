@@ -7,22 +7,23 @@
 // This define is set in the example .vcxproj file and need to be replicated in your app or by adding it to your imconfig.h file.
 
 #pragma once
-
+#include "pch.h"
 #include "homeGUI.h"
 #include "Log.h"
+#include "base.h"
 
-#include "main.h"
 #include <iostream>
+#include "main.h"
 
 
 
-
-int main() {
+__declspec(dllexport) int mainLoop(int n) {
 
 	homeGUI hmgui = homeGUI();
 
 	hmgui.run();
 
+	
 	
 	
 	Log::log("msg");

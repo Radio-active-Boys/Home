@@ -3,13 +3,20 @@
 #include "windowDrawer.h"
 
 
-
-void windowDrawer::createWindow() {
-    bool* open= new bool();
+bool windowDrawer::createWindow() {
+    /*bool* open= new bool();
     *open = true;
-    ImGui::ShowDemoWindow(open);
+    ImGui::ShowDemoWindow(open);*/
 
 	
-    ImGui::Begin("PK");
+    ImGui::Begin("First");
+	bool clicked = ImGui::Button("Close"); 
+    if (clicked) {
+        mainLoop(5);
+        return false;
+    }
     ImGui::End();
+    return true;
+    
+
 }

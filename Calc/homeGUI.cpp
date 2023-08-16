@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "homeGUI.h"
 
 #include "windowDrawer.h"
@@ -360,8 +361,7 @@ int homeGUI::run()
 
 
         
-        bool running = windowDrawer::createWindow();
-        if (!running) break;
+        windowDrawer::createWindow();
 
         // Rendering
         ImGui::Render();
