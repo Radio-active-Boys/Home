@@ -3,17 +3,17 @@
 
 
 
-std::thread ThreadHandler::createThreadForNewWindow(int(func)(), std::string threadName) {
+std::unique_ptr<std::thread> ThreadHandler::createThreadForNewWindow(int(func)(), std::string threadName) {
 	auto newThread = std::make_unique<std::thread>(func);
 	allThreads[threadName] = std::move(newThread);
 	activeThreads++;
-	return *allThreads[threadName];
+	return allThreads[threadName];
 }
 
 inline void ThreadHandler::destroyThread(std::string threadName)
 {
 	try {
-		std::thread &thread = allThreads[threadName];
+		 std::thread thread = allThreads[threadName];
 		allThreads.erase(threadName);
 		activeThreads--;
 		thread.join();
@@ -26,7 +26,7 @@ inline void ThreadHandler::destroyThread(std::string threadName)
 	return;
 }
 
-inline std::map<std::string, std::thread> ThreadHandler::getAllThreads()
+inline std::map<std::string, std::unique_ptr<std::thread>> ThreadHandler::getAllThreads()
 {
 	return allThreads;
 }
