@@ -15,9 +15,11 @@
 #include <iostream>
 #include "main.h"
 
-
+bool i = 1;
 
 __declspec(dllexport) int mainLoop() {
+
+	
 
 	homeGUI hmgui = homeGUI();
 
@@ -28,11 +30,17 @@ __declspec(dllexport) int mainLoop() {
 	
 	Log::log("msg");
 
-	
+	i = 0;
 
 
 
 
 
 	return 0;
+}
+
+
+__declspec(dllexport) bool running() {
+	if (i) return true;
+	return false;
 }

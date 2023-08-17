@@ -360,8 +360,8 @@ int homeGUI::run()
 
 
         
-        bool running = windowDrawer::createWindow();
-        if (!running) break;
+        bool on = windowDrawer::createWindow();
+        if (!on) done=true;
 
         // Rendering
         ImGui::Render();
