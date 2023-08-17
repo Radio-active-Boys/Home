@@ -34,9 +34,9 @@ int main() {
 	hmgui.run();
 
 	int(homeGUI::*fn)() = &homeGUI::run;
-	int(*gn)() = fn;
 	
-	ThreadHandler<int(*)()>::createThreadForNewWindow(fn,"fg");
+	
+	ThreadHandler<int(*)()>::createThreadForNewWindow(f,"fg");
 
 	for (int i{10}; i < 20; i++) {
 		Sleep(500);
