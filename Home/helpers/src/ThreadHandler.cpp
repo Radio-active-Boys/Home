@@ -36,3 +36,4 @@ static inline std::map<std::string, std::thread> ThreadHandler<FuncType>::getAll
 {
 	return allThreads;
 }
+
