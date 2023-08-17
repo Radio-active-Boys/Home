@@ -1,8 +1,8 @@
 
 
 #include "windowDrawer.h"
-#include <iostream>
-#include <thread>
+
+
 
 
 bool windowDrawer::createWindow() {
@@ -14,15 +14,8 @@ bool windowDrawer::createWindow() {
     ImGui::Begin("First");
 	bool clicked = ImGui::Button("Close"); 
     if (clicked) {
-
-        std::thread thread1(mainLoop, 1);
-        try {
-            thread1.detach();
-        }
-        catch(const std::exception& a) {
-            std::cout << a.what() << std::endl;
-        }
-        
+        using funcType = int(*)();
+        //ThreadHandler<funcType>::createThreadForNewWindow(mainLoop, std::string("mainLoop"));
         return false;
     }
     ImGui::End();

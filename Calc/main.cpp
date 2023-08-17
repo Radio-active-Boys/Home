@@ -17,7 +17,7 @@
 
 bool i = 1;
 
-__declspec(dllexport) int mainLoop(int n) {
+__declspec(dllexport) int mainLoop() {
 
 	
 
