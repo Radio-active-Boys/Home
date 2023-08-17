@@ -89,7 +89,7 @@
     <ClCompile Include="helpers\src\windowDrawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="helpers\src\ThreadHandler.cpp">
+    <ClCompile Include="helpers\include\ThreadHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

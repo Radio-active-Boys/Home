@@ -11,10 +11,20 @@
 #include "homeGUI.h"
 #include "Log.h"
 
-#include "main.h"
 #include <iostream>
 #include "ThreadHandler.h"
+#include "ThreadHandler.cpp"
+#include <time.h>
 
+
+int f() {
+	for (int i{}; i < 10; i++) {
+		Sleep(500);
+		std::cout << i << std::endl;
+	}
+	
+	return 1;
+}
 
 
 int main() {
@@ -23,13 +33,16 @@ int main() {
 
 	hmgui.run();
 
+	int(homeGUI::*fn)() = &homeGUI::run;
+	int(*gn)() = fn;
 	
-	
-	
+	ThreadHandler<int(*)()>::createThreadForNewWindow(fn,"fg");
 
-
-	using funcType = int(*)();
-	int i{};
+	for (int i{10}; i < 20; i++) {
+		Sleep(500);
+		std::cout << i << std::endl;
+	}
+	
 
 	//for (const auto& threadPair : ThreadHandler<funcType>::getAllThreads()) {
 
@@ -42,6 +55,14 @@ int main() {
 	//	
 	//}
 
+
+	int n = ThreadHandler<int(*)()>::getAllThreads().size();
+	std::cout << n << std::endl;
+
+	ThreadHandler<int(*)()>::joinAllThreads();
+
+	n = ThreadHandler<int(*)()>::getAllThreads().size();
+	std::cout << n << std::endl;
 
 
 

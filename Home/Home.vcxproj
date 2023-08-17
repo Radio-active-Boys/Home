@@ -153,7 +153,7 @@
     <ClInclude Include="helpers\include\windowDrawer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="helpers\src\ThreadHandler.cpp" />
+    <ClCompile Include="helpers\include\ThreadHandler.cpp" />
     <ClCompile Include="src\homeGUI.cpp" />
     <ClCompile Include="helpers\src\Log.cpp" />
     <ClCompile Include="src\helper.cpp" />

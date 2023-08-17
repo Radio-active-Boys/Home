@@ -6,20 +6,22 @@
 
 
 bool windowDrawer::createWindow() {
-    /*bool* open= new bool();
+    bool* open= new bool();
     *open = true;
-    ImGui::ShowDemoWindow(open);*/
+    ImGui::ShowDemoWindow(open);
 
 	
     ImGui::Begin("First");
 	bool clicked = ImGui::Button("Close"); 
-    if (clicked) {
-        using funcType = int(*)();
-        //ThreadHandler<funcType>::createThreadForNewWindow(mainLoop, std::string("mainLoop"));
-        return false;
-    }
     ImGui::End();
+    if (clicked)return false;
+
+    size_t len = ThreadHandler<int(*)()>::getAllThreads().size();
+    
+
     return true;
+    
+    
     
 
 }
