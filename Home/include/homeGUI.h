@@ -60,6 +60,6 @@ class homeGUI
     static LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
     
 public:
-    static int run();
+    int run();
 };
 

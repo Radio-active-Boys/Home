@@ -21,14 +21,26 @@ int main() {
 
 	homeGUI hmgui = homeGUI();
 
-	hmgui.run();
+
+	try {
+
+		hmgui.run();
+	}
+
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+
+	}
+	
 
 	
 	
 	Log::log("msg");
 
-	
+	while (running()) {
 
+	}
+	
 
 
 
