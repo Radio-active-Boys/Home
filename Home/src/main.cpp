@@ -9,9 +9,10 @@
 #pragma once
 
 #include "homeGUI.h"
+
+
 #include "Log.h"
 
-#include "main.h"
 #include <iostream>
 #include "ThreadHandler.h"
 
@@ -28,19 +29,19 @@ int main() {
 	
 
 
-	using funcType = int(*)();
-	int i{};
+	/*int i{};
+	ThreadHandler<int(*)()> handler{};
 
-	//for (const auto& threadPair : ThreadHandler<funcType>::getAllThreads()) {
+	for (const auto& threadPair : handler.getAllThreads()) {
 
-	//	i++;
-	//	const std::string& threadName = threadPair.first;
-	//	const std::thread& thread = threadPair.second;
-	//	ThreadHandler<funcType>::destroyThread(threadName);
-	//	Log::log(threadName.c_str());
-	//	
-	//	
-	//}
+		i++;
+		const std::string& threadName = threadPair.first;
+		const std::thread& thread = threadPair.second;
+		ThreadHandler<int(*)()>::destroyThread(threadName);
+		Log::log(threadName.c_str());
+		
+		
+	}*/
 
 
 

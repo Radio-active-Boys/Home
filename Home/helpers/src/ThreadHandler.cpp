@@ -3,19 +3,14 @@
 
 
 
-template<typename FuncType>
-static std::thread ThreadHandler<FuncType>::createThreadForNewWindow(FuncType func,std::string threadName)
-{
-	std::thread thread(func);
-	ThreadHandler::activeThreads++;
-	allThreads.emplace(threadName, std::move(thread));
-	thread.detach();
-
-	return thread;
+std::thread ThreadHandler::createThreadForNewWindow(int(func)(), std::string threadName) {
+	auto newThread = std::make_unique<std::thread>(func);
+	allThreads[threadName] = std::move(newThread);
+	activeThreads++;
+	return *allThreads[threadName];
 }
 
-template<typename FuncType>
-static inline void ThreadHandler<FuncType>::destroyThread(std::string threadName)
+inline void ThreadHandler::destroyThread(std::string threadName)
 {
 	try {
 		std::thread &thread = allThreads[threadName];
@@ -31,8 +26,7 @@ static inline void ThreadHandler<FuncType>::destroyThread(std::string threadName
 	return;
 }
 
-template<typename FuncType>
-static inline std::map<std::string, std::thread> ThreadHandler<FuncType>::getAllThreads()
+inline std::map<std::string, std::thread> ThreadHandler::getAllThreads()
 {
 	return allThreads;
 }

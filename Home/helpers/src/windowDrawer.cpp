@@ -13,12 +13,9 @@ bool windowDrawer::createWindow() {
 	
     ImGui::Begin("First");
 	bool clicked = ImGui::Button("Close"); 
-    if (clicked) {
-        using funcType = int(*)();
-        //ThreadHandler<funcType>::createThreadForNewWindow(mainLoop, std::string("mainLoop"));
-        return false;
-    }
+    
     ImGui::End();
+    if (clicked)return false;
     return true;
     
 
