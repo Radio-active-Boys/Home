@@ -17,7 +17,7 @@
 
 
 
-__declspec(dllexport) int mainLoop(int n) {
+__declspec(dllexport) int mainLoop() {
 
 	homeGUI hmgui = homeGUI();
 

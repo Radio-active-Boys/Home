@@ -13,7 +13,7 @@
 
 #include "main.h"
 #include <iostream>
-
+#include "ThreadHandler.h"
 
 
 
@@ -25,9 +25,23 @@ int main() {
 
 	
 	
-	Log::log("msg");
-
 	
+
+
+	using funcType = int(*)();
+	int i{};
+
+	//for (const auto& threadPair : ThreadHandler<funcType>::getAllThreads()) {
+
+	//	i++;
+	//	const std::string& threadName = threadPair.first;
+	//	const std::thread& thread = threadPair.second;
+	//	ThreadHandler<funcType>::destroyThread(threadName);
+	//	Log::log(threadName.c_str());
+	//	
+	//	
+	//}
+
 
 
 
