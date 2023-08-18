@@ -2,7 +2,7 @@
 
 #include "windowDrawer.h"
 
-
+#include "main.h"
 
 
 bool windowDrawer::createWindow() {
@@ -14,14 +14,23 @@ bool windowDrawer::createWindow() {
     ImGui::Begin("First");
 	bool clicked = ImGui::Button("Close"); 
     ImGui::End();
-    if (clicked)return false;
+    if (clicked) {
+        try {
+            ThreadHandler<int(*)()>::createThreadForNewWindow(mainLoop, "ashu");
+        }
+        catch (std::exception& e) {
+            std::cout << e.what() << std::endl;
+        }
+        
+        return false;
+    }
 
-    size_t len = ThreadHandler<int(*)()>::getAllThreads().size();
+   
     
 
     return true;
     
     
-    
 
 }
+
