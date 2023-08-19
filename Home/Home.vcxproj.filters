@@ -51,6 +51,9 @@
     <ClInclude Include="helpers\include\ThreadHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="views\include\view.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\imgui.cpp">
@@ -90,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="helpers\include\ThreadHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="views\src\view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
