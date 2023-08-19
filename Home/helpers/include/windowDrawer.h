@@ -7,6 +7,8 @@ class windowDrawer
 {
 public:
 	static bool createWindow();
+
+
 };
 
 
