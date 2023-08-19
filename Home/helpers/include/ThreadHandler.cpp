@@ -14,10 +14,17 @@ template<typename FuncType>
 std::thread ThreadHandler<FuncType>::createThreadForNewWindow(FuncType func,std::string threadName)
 {
 	std::thread thread(func);
-	ThreadHandler::activeThreads++;
-	allThreads.push_back(threadHolder(&thread));
-	thread.detach();
-
+	
+	try {
+		
+		ThreadHandler::activeThreads++;
+		allThreads.push_back(threadHolder(&thread));
+		thread.detach();
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	
 	return thread;
 }
 
@@ -51,9 +58,21 @@ std::vector<threadHolder> ThreadHandler<FuncType>::getAllThreads()
 
 template <typename FuncType>
 void ThreadHandler<FuncType>::joinAllThreads() {
-	for (auto& pair : allThreads) {
-		pair.thread->join();
+	try {
+		for (auto& pair : allThreads) {
+			try {
+				pair.thread->join();
+			}
+			catch (std::exception& e) {
+ 				std::cout << e.what() << std::endl;
+			}
+			
+		}
 	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	
 	allThreads.clear();
 	activeThreads = 0;
 }
