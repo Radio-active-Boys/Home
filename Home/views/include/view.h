@@ -6,5 +6,5 @@ class view {
 private: 
 	static enum all_view;
 public:
-	static void show_window();
+	static bool show_window();
 };

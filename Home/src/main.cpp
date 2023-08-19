@@ -9,11 +9,7 @@
 
 int main() {
 
-	
 	homeGUI::run();
-	  
-
-
 
 	return 0;
 }

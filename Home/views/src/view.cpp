@@ -1,7 +1,7 @@
 #include "view.h"
 
 
-void view::show_window() {
+bool view::show_window() {
     bool* open = new bool();
     *open = true;
     ImGui::ShowDemoWindow(open);
@@ -11,5 +11,5 @@ void view::show_window() {
     bool clicked = ImGui::Button("Close");
     ImGui::End();
 }
- 
+
 
