@@ -1,8 +1,7 @@
 #pragma once
 #include "imgui.h"
-#include<iostream>
-#include "ThreadHandler.h"
-#include "ThreadHandler.cpp"
+#include "view.h"
+
 class windowDrawer
 {
 public:
