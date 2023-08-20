@@ -80,9 +80,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\helper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  
     <ClCompile Include="src\homeGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
