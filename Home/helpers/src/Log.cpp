@@ -3,9 +3,9 @@
 
 
 
-#define _LOG_			//Controlls the logging 
+#define LOG			//Controlls the logging 
 
-#ifdef _LOG_
+#ifdef LOG
 	bool Log::log(const char* msg...)
 	{
 		std::cout << msg;

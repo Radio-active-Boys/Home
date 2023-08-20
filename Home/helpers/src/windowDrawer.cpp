@@ -1,27 +1,14 @@
 
 
-#include "windowDrawer.h"
+#include "WindowDrawer.h"
 
 
 
+bool WindowDrawer::create_window() {
 
-bool windowDrawer::createWindow() {
-    bool* open= new bool();
-    *open = true;
-    ImGui::ShowDemoWindow(open);
-
-	
-    ImGui::Begin("First");
-	bool clicked = ImGui::Button("Close"); 
-    ImGui::End();
-    if (clicked)return false;
-
-    size_t len = ThreadHandler<int(*)()>::getAllThreads().size();
-    
-
+    View::show_window();
     return true;
-    
-    
-    
+
 
 }
+

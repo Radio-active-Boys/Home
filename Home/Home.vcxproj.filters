@@ -45,10 +45,13 @@
     <ClInclude Include="helpers\include\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="helpers\include\windowDrawer.h">
+    <ClInclude Include="helpers\include\WindowDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="helpers\include\ThreadHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="views\include\view.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,11 +89,57 @@
     <ClCompile Include="helpers\src\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="helpers\src\windowDrawer.cpp">
+    <ClCompile Include="helpers\src\WindowDrawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="helpers\include\ThreadHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="views\src\view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="static\OpenSans_Condensed-Bold.ttf" />
+    <Font Include="static\OpenSans_Condensed-BoldItalic.ttf" />
+    <Font Include="static\OpenSans_Condensed-ExtraBold.ttf" />
+    <Font Include="static\OpenSans_Condensed-ExtraBoldItalic.ttf" />
+    <Font Include="static\OpenSans_Condensed-Italic.ttf" />
+    <Font Include="static\OpenSans_Condensed-Light.ttf" />
+    <Font Include="static\OpenSans_Condensed-LightItalic.ttf" />
+    <Font Include="static\OpenSans_Condensed-Medium.ttf" />
+    <Font Include="static\OpenSans_Condensed-MediumItalic.ttf" />
+    <Font Include="static\OpenSans_Condensed-Regular.ttf" />
+    <Font Include="static\OpenSans_Condensed-SemiBold.ttf" />
+    <Font Include="static\OpenSans_Condensed-SemiBoldItalic.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-Bold.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-BoldItalic.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-ExtraBold.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-ExtraBoldItalic.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-Italic.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-Light.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-LightItalic.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-Medium.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-MediumItalic.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-Regular.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-SemiBold.ttf" />
+    <Font Include="static\OpenSans_SemiCondensed-SemiBoldItalic.ttf" />
+    <Font Include="static\OpenSans-Bold.ttf" />
+    <Font Include="static\OpenSans-BoldItalic.ttf" />
+    <Font Include="static\OpenSans-ExtraBold.ttf" />
+    <Font Include="static\OpenSans-ExtraBoldItalic.ttf" />
+    <Font Include="static\OpenSans-Italic.ttf" />
+    <Font Include="static\OpenSans-Italic-VariableFont_wdth,wght.ttf" />
+    <Font Include="static\OpenSans-Light.ttf" />
+    <Font Include="static\OpenSans-LightItalic.ttf" />
+    <Font Include="static\OpenSans-Medium.ttf" />
+    <Font Include="static\OpenSans-MediumItalic.ttf" />
+    <Font Include="static\OpenSans-Regular.ttf" />
+    <Font Include="static\OpenSans-SemiBold.ttf" />
+    <Font Include="static\OpenSans-SemiBoldItalic.ttf" />
+    <Font Include="static\OpenSans-VariableFont_wdth,wght.ttf" />
   </ItemGroup>
 </Project>

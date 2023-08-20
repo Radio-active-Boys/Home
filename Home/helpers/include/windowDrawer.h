@@ -1,11 +1,16 @@
 #pragma once
 #include "imgui.h"
-#include<iostream>
-#include "ThreadHandler.h"
-#include "ThreadHandler.cpp"
-class windowDrawer
+#include "view.h"
+
+class WindowDrawer
 {
 public:
-	static bool createWindow();
+	static bool create_window();
+
+
 };
+
+
+
+
 
