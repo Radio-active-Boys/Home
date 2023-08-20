@@ -1,6 +1,6 @@
 #include "homeGUI.h"
 
-#include "windowDrawer.h"
+#include "WindowDrawer.h"
 
 
 
@@ -360,7 +360,7 @@ int homeGUI::run()
 
 
         
-        bool on = windowDrawer::createWindow();
+        bool on = WindowDrawer::create_window();
         if (!on) done=true;
 
         // Rendering

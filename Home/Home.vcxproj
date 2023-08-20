@@ -113,7 +113,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(DXSDK_DIR)/Lib/x64;$(WindowsSdkDir)lib\$(WindowsSDKVersion)\um\x64;$(SolutionDir)$(IntDir)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Calc.lib;d3d12.lib;dxgi.lib</AdditionalDependencies>
+      <AdditionalDependencies>d3d12.lib;dxgi.lib</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
@@ -150,7 +150,7 @@
     <ClInclude Include="include\imstb_textedit.h" />
     <ClInclude Include="include\imstb_truetype.h" />
     <ClInclude Include="helpers\include\Log.h" />
-    <ClInclude Include="helpers\include\windowDrawer.h" />
+    <ClInclude Include="helpers\include\WindowDrawer.h" />
     <ClInclude Include="views\include\view.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,7 +166,7 @@
     <ClCompile Include="src\imgui_tables.cpp" />
     <ClCompile Include="src\imgui_widgets.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="helpers\src\windowDrawer.cpp" />
+    <ClCompile Include="helpers\src\WindowDrawer.cpp" />
     <ClCompile Include="views\src\view.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

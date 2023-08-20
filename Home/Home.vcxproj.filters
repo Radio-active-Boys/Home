@@ -45,7 +45,7 @@
     <ClInclude Include="helpers\include\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="helpers\include\windowDrawer.h">
+    <ClInclude Include="helpers\include\WindowDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="helpers\include\ThreadHandler.h">
@@ -89,7 +89,7 @@
     <ClCompile Include="helpers\src\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="helpers\src\windowDrawer.cpp">
+    <ClCompile Include="helpers\src\WindowDrawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="helpers\include\ThreadHandler.cpp">
