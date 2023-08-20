@@ -98,9 +98,6 @@
     <ClCompile Include="views\src\view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\helper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="static\OpenSans_Condensed-Bold.ttf" />
