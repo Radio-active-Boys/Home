@@ -8,7 +8,10 @@
 
 class view {
 private: 
-	static enum all_view;
+	static enum all_view {
+		view1,
+		view2,
+	};
 public:
 	static void show_window();
 	static void calculator();

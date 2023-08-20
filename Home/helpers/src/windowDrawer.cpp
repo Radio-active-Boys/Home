@@ -1,6 +1,6 @@
 
 
-#include "windowDrawer.h"
+#include "WindowDrawer.h"
 
  
 
@@ -16,10 +16,11 @@ bool windowDrawer::createWindow() {
     view::sci_calculator();
     view::basic_calculator();
 	
+	
 
+    View::show_window();
     return true;
-    
-    
+
 
 }
 
