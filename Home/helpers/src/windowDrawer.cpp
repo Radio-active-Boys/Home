@@ -1,13 +1,12 @@
 
 
-#include "windowDrawer.h"
-
-#include "main.h"
+#include "WindowDrawer.h"
 
 
-bool windowDrawer::createWindow() {
 
-    view::show_window();
+bool WindowDrawer::create_window() {
+
+    View::show_window();
     return true;
 
 
