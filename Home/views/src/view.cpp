@@ -157,7 +157,7 @@ void view::basic_calculator() {
 
 
     // Calculate grid properties
-    const int numColumns = 5;
+    const int numColumns = 4;
     const int numRows = 5;
     const ImVec2 windowSize = ImGui::GetWindowSize();
     ImVec2 buttonSize(windowSize.x * 0.15f, windowSize.y * 0.1f);
