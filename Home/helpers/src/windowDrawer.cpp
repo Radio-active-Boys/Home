@@ -2,11 +2,19 @@
 
 #include "windowDrawer.h"
 
-#include "main.h"
+ 
 
 
 bool windowDrawer::createWindow() {
-    view::show_window();
+
+    //bool* open = new bool();
+    //*open = true;
+    //ImGui::ShowDemoWindow(open);
+
+
+ 
+    view::sci_calculator();
+    view::basic_calculator();
 	
 
     return true;
