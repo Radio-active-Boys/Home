@@ -51,10 +51,16 @@ std::vector<threadHolder> ThreadHandler<FuncType>::getAllThreads()
 
 template <typename FuncType>
 void ThreadHandler<FuncType>::joinAllThreads() {
-	for (auto& pair : allThreads) {
-		pair.thread->join();
+	try {
+		for (auto& pair : allThreads) {
+			pair.thread->join();
+		}
+		allThreads.clear();
+		activeThreads = 0;
 	}
-	allThreads.clear();
-	activeThreads = 0;
+	catch (std::exception &e) {
+		std::cout << e.what()<<"ThreadHandler.cpp joinAllThreads" << std::endl;
+	}
+	
 }
 

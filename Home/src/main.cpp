@@ -61,9 +61,16 @@ int main() {
 
 	ThreadHandler<int(*)()>::joinAllThreads();
 
-	n = ThreadHandler<int(*)()>::getAllThreads().size();
-	std::cout << n << std::endl;
 
+	try {
+		n = ThreadHandler<int(*)()>::getAllThreads().size();
+		std::cout << n << std::endl;
+
+	}
+	catch (std::exception& e) {
+	std:: cout << e.what() << std::endl;
+	}
+	
 
 
 
