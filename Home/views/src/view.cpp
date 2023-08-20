@@ -10,6 +10,8 @@ bool view::show_window() {
     ImGui::Begin("First");
     bool clicked = ImGui::Button("Close");
     ImGui::End();
+
+    return true;
 }
 
 

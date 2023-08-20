@@ -2,7 +2,6 @@
 
 #include "windowDrawer.h"
 
-#include "main.h"
 
 
 bool windowDrawer::createWindow() {
