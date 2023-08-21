@@ -1,10 +1,19 @@
 #include "View.h"
 
 
+ 
+// Evaluate expression  
+double evaluateExpression(const std::string& expression) {
+    
+
+    return  6.0;
+}
+
+ 
 
 
 static std::string enteredText = "";
-
+double result = 0.0;
 
 char txt[555] = "";
 void View::basic_calculator() {
@@ -155,10 +164,14 @@ void View::basic_calculator() {
                 else if (enteredText.length() > 0 && operators.find(enteredText.back()) != std::string::npos && operators.find(symbols[row][col].back()) != std::string::npos) {
 
                 }
+                else if (row == 4 && col == 3) {
+                    result =  evaluateExpression(enteredText) ;
+                    enteredText = std::to_string(result);
+                }
                 else {
 
 
-                    enteredText += buttonText, symbols[row][col];
+                    enteredText += buttonText , symbols[row][col];
 
 
                 }
