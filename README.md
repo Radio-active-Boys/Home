@@ -50,4 +50,6 @@ Here's how you can use this project:
 
 
 
+Calculator
 
+Machine Learning
