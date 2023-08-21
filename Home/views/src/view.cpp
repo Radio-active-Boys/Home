@@ -6,8 +6,6 @@ static std::string inputExpression = "";
  
 void view::basic_calculator() {
 
-    //  ImVec2 minSize(400, 300);
-    //  ImVec2 maxSize(800, 600);
 
 
     //  ImGui::Begin("calculator");
@@ -185,6 +183,7 @@ void view::basic_calculator() {
             snprintf(buttonText, sizeof(buttonText), "Button %d,%d", row, col);
             ImGui::Button(buttonText, buttonSize);
         }
+
     }
 
     // ... Add your UI elements here ...

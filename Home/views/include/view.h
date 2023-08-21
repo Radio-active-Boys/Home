@@ -8,7 +8,7 @@
 
 class view {
 private: 
-	static enum all_view {
+	enum all_view {
 		view1,
 		view2,
 	};

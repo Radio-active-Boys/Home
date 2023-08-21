@@ -54,6 +54,9 @@
     <ClInclude Include="views\include\view.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="helpers\include\Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\imgui.cpp">
@@ -80,9 +83,6 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\helper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\homeGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -98,7 +98,7 @@
     <ClCompile Include="views\src\view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\helper.cpp">
+    <ClCompile Include="helpers\src\Config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -141,5 +141,7 @@
     <Font Include="static\OpenSans-SemiBold.ttf" />
     <Font Include="static\OpenSans-SemiBoldItalic.ttf" />
     <Font Include="static\OpenSans-VariableFont_wdth,wght.ttf" />
+    <Font Include="..\..\Users\Asus\Downloads\thick-calibri-font\ThickCalibri-BPDd.otf" />
+    <Font Include="static\ThickCalibri-BPDd.otf" />
   </ItemGroup>
 </Project>
