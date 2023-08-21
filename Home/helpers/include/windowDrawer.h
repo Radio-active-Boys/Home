@@ -2,10 +2,10 @@
 #include "imgui.h"
 #include "view.h"
 
-class windowDrawer
+class WindowDrawer
 {
 public:
-	static bool createWindow();
+	static bool create_window();
 
 
 };

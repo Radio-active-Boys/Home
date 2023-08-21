@@ -7,11 +7,11 @@
 #include <iostream>
 
 
-class threadHolder {
+class ThreadHolder {
 public:
 	std::thread* thread;
 
-	threadHolder(std::thread* th) {
+	ThreadHolder(std::thread* th) {
 		this->thread = th;
 	};
 };
@@ -23,16 +23,16 @@ template <typename FuncType>
 class ThreadHandler {
 
 public:
-	static std::thread createThreadForNewWindow(FuncType func, std::string threadName);
-	static void  destroyThread(int ind);
-	static std::vector<threadHolder>  getAllThreads();
-	static void joinAllThreads();
+	static std::thread create_thread_for_new_window(FuncType func, std::string threadName);
+	static void destroy_thread(int ind);
+	static std::vector<ThreadHolder>  get_all_threads();
+	static void join_all_threads();
 
 
 
 private:
-	static std::vector<threadHolder> allThreads;
-	static int activeThreads;
+	static std::vector<ThreadHolder> m_all_threads;
+	static int m_active_threads;
 
 };
 
