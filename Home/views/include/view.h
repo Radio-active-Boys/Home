@@ -4,7 +4,7 @@
 #include  <string>
 class  View {
 private: 
-	static enum all_view {
+	enum all_view {
 		view1,
 		view2,
 	};

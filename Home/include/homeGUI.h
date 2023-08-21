@@ -8,7 +8,8 @@
 #include <d3d12.h>
 #include <dxgi1_4.h>
 #include <tchar.h>
-
+#include "Config.h"
+#include <iostream>
 
 
 
@@ -47,10 +48,10 @@ static ID3D12Resource* g_mainRenderTargetResource[NUM_BACK_BUFFERS] = {};
 static D3D12_CPU_DESCRIPTOR_HANDLE  g_mainRenderTargetDescriptor[NUM_BACK_BUFFERS] = {};
 
 
+
 class homeGUI
 {
 
-    // Forward declarations of helper functions
     static  bool CreateDeviceD3D(HWND hWnd);
     static  void CleanupDeviceD3D();
     static  void CreateRenderTarget();
@@ -58,8 +59,10 @@ class homeGUI
     static void WaitForLastSubmittedFrame();
     static  FrameContext* WaitForNextFrameResources();
     static LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-    
+
 public:
     static int run();
+
+
 };
 

@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="helpers\include\Config.h" />
     <ClInclude Include="helpers\include\ThreadHandler.h" />
     <ClInclude Include="include\homeGUI.h" />
     <ClInclude Include="include\imconfig.h" />
@@ -155,10 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="helpers\include\ThreadHandler.cpp" />
-    <ClCompile Include="src\helper.cpp" />
+    <ClCompile Include="helpers\src\Config.cpp" />
     <ClCompile Include="src\homeGUI.cpp" />
     <ClCompile Include="helpers\src\Log.cpp" />
-    <ClCompile Include="src\helper.cpp" />
     <ClCompile Include="src\imgui.cpp" />
     <ClCompile Include="src\imgui_demo.cpp" />
     <ClCompile Include="src\imgui_draw.cpp" />
@@ -171,6 +171,7 @@
     <ClCompile Include="views\src\view.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="..\..\Users\Asus\Downloads\thick-calibri-font\ThickCalibri-BPDd.otf" />
     <Font Include="static\OpenSans-Bold.ttf" />
     <Font Include="static\OpenSans-BoldItalic.ttf" />
     <Font Include="static\OpenSans-ExtraBold.ttf" />
@@ -209,6 +210,7 @@
     <Font Include="static\OpenSans_SemiCondensed-Regular.ttf" />
     <Font Include="static\OpenSans_SemiCondensed-SemiBold.ttf" />
     <Font Include="static\OpenSans_SemiCondensed-SemiBoldItalic.ttf" />
+    <Font Include="static\ThickCalibri-BPDd.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
