@@ -152,7 +152,7 @@
     <ClInclude Include="include\imstb_truetype.h" />
     <ClInclude Include="helpers\include\Log.h" />
     <ClInclude Include="helpers\include\WindowDrawer.h" />
-    <ClInclude Include="views\include\view.h" />
+    <ClInclude Include="views\include\View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="helpers\include\ThreadHandler.cpp" />
@@ -168,7 +168,8 @@
     <ClCompile Include="src\imgui_widgets.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="helpers\src\WindowDrawer.cpp" />
-    <ClCompile Include="views\src\view.cpp" />
+    <ClCompile Include="views\src\Calculator.cpp" />
+    <ClCompile Include="views\src\View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="..\..\Users\Asus\Downloads\thick-calibri-font\ThickCalibri-BPDd.otf" />

@@ -5,7 +5,7 @@
  
 
 
-bool windowDrawer::createWindow() {
+bool WindowDrawer::create_window() {
 
     //bool* open = new bool();
     //*open = true;
@@ -13,12 +13,12 @@ bool windowDrawer::createWindow() {
 
 
  
-    view::sci_calculator();
-    view::basic_calculator();
+    View::sci_calculator();
+    View::basic_calculator();
 	
 	
 
-    View::show_window();
+    
     return true;
 
 

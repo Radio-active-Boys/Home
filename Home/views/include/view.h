@@ -2,11 +2,14 @@
 #include "imgui.h"
 #include <vector>
 #include  <string>
+#include <cstring>
+#include <cmath> 
+#include <stack>
+#include <sstream>
+# 
 
-#include <cmath>
 
-
-class view {
+class View {
 private: 
 	enum all_view {
 		view1,
