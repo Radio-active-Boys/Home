@@ -101,6 +101,9 @@
     <ClCompile Include="helpers\src\Config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="views\src\Calculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="static\OpenSans_Condensed-Bold.ttf" />
