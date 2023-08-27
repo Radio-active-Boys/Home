@@ -6,7 +6,8 @@
 #include <cmath> 
 #include <stack>
 #include <sstream>
-# 
+
+#include <thread> 
 
 
 class View {

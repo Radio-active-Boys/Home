@@ -106,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Home\include;$(DXSDK_DIR)Include;$(WindowsSdkDir)include\$(WindowsSDKVersion)\um;$(SolutionDir)Home\helpers\include;$(SolutionDir)Home\views\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Home\include;$(DXSDK_DIR)Include;$(WindowsSdkDir)include\$(WindowsSDKVersion)\um;$(SolutionDir)Home\helpers\include;$(SolutionDir)Home\views\include;$(SolutionDir)Home\Node;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -152,11 +152,15 @@
     <ClInclude Include="include\imstb_truetype.h" />
     <ClInclude Include="helpers\include\Log.h" />
     <ClInclude Include="helpers\include\WindowDrawer.h" />
+    <ClInclude Include="Node\Coordinate_Math_2D.h" />
+    <ClInclude Include="Node\Node.h" />
     <ClInclude Include="views\include\View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="helpers\include\ThreadHandler.cpp" />
     <ClCompile Include="helpers\src\Config.cpp" />
+    <ClCompile Include="Node\Coordinate_Math_2D.cpp" />
+    <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="src\homeGUI.cpp" />
     <ClCompile Include="helpers\src\Log.cpp" />
     <ClCompile Include="src\imgui.cpp" />
@@ -172,7 +176,6 @@
     <ClCompile Include="views\src\View.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\..\Users\Asus\Downloads\thick-calibri-font\ThickCalibri-BPDd.otf" />
     <Font Include="static\OpenSans-Bold.ttf" />
     <Font Include="static\OpenSans-BoldItalic.ttf" />
     <Font Include="static\OpenSans-ExtraBold.ttf" />
@@ -212,6 +215,11 @@
     <Font Include="static\OpenSans_SemiCondensed-SemiBold.ttf" />
     <Font Include="static\OpenSans_SemiCondensed-SemiBoldItalic.ttf" />
     <Font Include="static\ThickCalibri-BPDd.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Node\Node.vcxproj">
+      <Project>{d278df03-1fbf-48a7-8769-0cb94747204a}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

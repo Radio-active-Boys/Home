@@ -57,6 +57,12 @@
     <ClInclude Include="helpers\include\Config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Node\Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node\Coordinate_Math_2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\imgui.cpp">
@@ -101,6 +107,15 @@
     <ClCompile Include="helpers\src\Config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="views\src\Calculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Node\Node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Node\Coordinate_Math_2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="static\OpenSans_Condensed-Bold.ttf" />
@@ -141,7 +156,6 @@
     <Font Include="static\OpenSans-SemiBold.ttf" />
     <Font Include="static\OpenSans-SemiBoldItalic.ttf" />
     <Font Include="static\OpenSans-VariableFont_wdth,wght.ttf" />
-    <Font Include="..\..\Users\Asus\Downloads\thick-calibri-font\ThickCalibri-BPDd.otf" />
     <Font Include="static\ThickCalibri-BPDd.otf" />
   </ItemGroup>
 </Project>
