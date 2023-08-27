@@ -24,6 +24,16 @@ Point::Point(Point& p)
 	this->set_y(p.get_y());
 }
 
+Point::Point()
+{
+}
+
+Point::Point(ImVec2 v):Point(v.x, v.y)
+{
+	
+
+}
+
 double Point::displacement(Point p) const
 {
 	return sqrt(pow(this->get_x() - p.get_x(), 2) + pow(this->get_y() - p.get_y(), 2));
@@ -97,7 +107,7 @@ Point Point::operator-(Point p)
 
 ImVec2 Point::Vec2()
 {
-	return ImVec2(this->get_x(),this->get_y());
+	return ImVec2((float)this->get_x(),(float)this->get_y());
 }
 
 
@@ -155,14 +165,15 @@ Point BezierCurveCubic::interpolate(double t)
 	else
 		delY = disp * this->get_k2();
 
-	if (this->initial.get_flow_type() == INPUT)
+	if (this->initial.get_flow_type() == INPUT_PIN)
 		delX = -disp * this->get_k1();
 	else
 		delX = disp * this->get_k1();
 
 	Point delP(delX, delY);
-
-	return this->cubic_bezier_interpolation(this->initial,initial+delP,final-delP,final,t);
+	Point a = initial + delP;
+	Point b = final - delP;
+	return this->cubic_bezier_interpolation(this->initial, a, b, final, t);
 }
 
 

@@ -45,6 +45,12 @@ void View::show_window()
         ImGui::GetWindowDrawList()->AddRectFilled(boxPos, boxMax, colorSelected);
     else
         ImGui::GetWindowDrawList()->AddRectFilled(boxPos, boxMax, colorNotSelected);
+
+    Node node;
+    node.draw();
+
+
+    //Node::drawLine();
 	ImGui::End();
 
 

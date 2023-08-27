@@ -6,7 +6,7 @@
 #include <cmath> 
 #include <stack>
 #include <sstream>
-
+#include "Node.h"
 #include <thread> 
 
 

@@ -5,15 +5,20 @@
 
 
 
+ enum Flow_Type {
+	INPUT_PIN,
+	OUTPUT_PIN
+};
+
 
 
 class Point {
 public:
+	Point(double x, double y, Flow_Type);
 	Point(double x, double y);
 	Point(Point&);
-	const Point(Point&);
-	Point() = default;
-	
+	Point();
+	Point(ImVec2);
 	double			displacement(Point) const;
 	double			displacement_from_origin() const;
 	double			get_x() const;
@@ -25,15 +30,16 @@ public:
 	bool			to_below_of(Point) const;
 	bool			to_right_of(Point) const;
 	bool			to_left_of(Point) const;
-
-
+	Flow_Type		get_flow_type() const;
+	
+	Point			operator+(Point);
+	Point			operator-(Point);
 	ImVec2			Vec2();
-	void			make_input();
-	void			make_output();
 
 private:
 	std::vector<double> position{ 0,0 };
-	bool input;
+	Flow_Type flow = INPUT_PIN;
+	bool nodePoint  = false;
 };
 
 
@@ -61,8 +67,7 @@ public:
 	double		get_k2() const;
 	Point		get_initial() const;
 	Point		get_final() const;
-	bool		is_input() const;
-	bool		is_output() const;
+	
 
 
 
@@ -75,8 +80,8 @@ public:
 private:
 	Point initial;
 	Point final;
-	float k1{0.4};
-	float k2{0.01};
+	double k1{0.4};
+	double k2{0.01};
 	
 
 };
