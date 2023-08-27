@@ -15,7 +15,7 @@ bool WindowDrawer::create_window() {
  
     View::sci_calculator();
     View::basic_calculator();
-	
+    View::show_window();
 	
 
     
