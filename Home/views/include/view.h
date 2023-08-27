@@ -7,7 +7,12 @@
 #include <stack>
 #include <sstream>
 
+#include <iostream>
+#include <cctype>
+
+
 #include <thread> 
+
 
 
 class View {

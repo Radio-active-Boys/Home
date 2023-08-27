@@ -1,15 +1,152 @@
 #include "View.h"
 
-
- 
-// Evaluate expression  
-double evaluateExpression(const std::string& expression) {
-    
-
-    return  6.0;
+using namespace std;
+// Function to find precedence of
+// operators.
+double precedence(char op) {
+    if (op == '+' || op == '-')
+        return 1;
+    if (op == '*' || op == '/')
+        return 2;
+    return 0;
 }
 
+// Function to perform arithmetic operations.
+double applyOp(double a, double b, char op) {
+    switch (op) {
+    case '+': return a + b;
+    case '-': return a - b;
+    case '*': return a * b;
+    case '/': return a / b;
+    default: return 0;
+    }
+}
+
+// Evaluate expression  
+double evaluateExpression(const std::string& expression) {
+
+    int i;
+
+    // stack to store integer values.
+    stack <double> values;
+
+    // stack to store operators.
+    stack <char> ops;
+
+    for (i = 0; i < expression.length(); i++) {
+
+        // Current expression is a whitespace,
+        // skip it.
+        if (expression[i] == ' ')
+            continue;
+
+        // Current expression is an opening
+        // brace, push it to 'ops'
+        else if (expression[i] == '(') {
+            ops.push(expression[i]);
+        }
+        // Current expression is a number, push
+        // it to stack for numbers.
+        else if (isdigit(expression[i])) {
+            double val = 0;
+            bool decimalArrive = false;
+            int j = 0;
+            // There may be more than one
+    // digits in number.
+            while (i < expression.length() &&
+                (isdigit(expression[i]) || (expression[i] == '.')))
+            {
+                if (expression[i] == '.' && !decimalArrive ){
+                    i++;
+                    decimalArrive = true;
+                }
+                   if (decimalArrive){ j--;
+                    val +=  (expression[i] - '0')*pow(10,j);
+                    i++;
+                }
+                else {
+                    val = (val * 10) + (expression[i] - '0');
+                    i++;
+                }
+            }
+            values.push(val);
+
+            // right now the i points to
+            // the character next to the digit,
+            // since the for loop also increases
+            // the i, we would skip one
+            //  expression position; we need to
+            // decrease the value of i by 1 to
+            // correct the offset.
+            i--;
+        }
+        else if (expression[i] == ')')
+        {
+            while (!ops.empty() && ops.top() != '(')
+            {
+                double val2 = values.top();
+                values.pop();
+
+                double val1 = values.top();
+                values.pop();
+
+                char op = ops.top();
+                ops.pop();
+
+                values.push(applyOp(val1, val2, op));
+            }
+
+            // pop opening brace.
+            if (!ops.empty())
+                ops.pop();
+        }
+        else
+        {
+            // While top of 'ops' has same or greater
+            // precedence to current expression, which
+            // is an operator. Apply operator on top
+            // of 'ops' to top two elements in values stack.
+            while (!ops.empty() && precedence(ops.top())
+                >= precedence(expression[i])) {
+                double val2 = values.top();
+                values.pop();
+
+                double val1 = values.top();
+                values.pop();
+
+                char op = ops.top();
+                ops.pop();
+
+                values.push(applyOp(val1, val2, op));
+            }
+
+            // Push current expression to 'ops'.
+            ops.push(expression[i]);
+        }
+    }
+        // Entire expression has been parsed at this
+// point, apply remaining ops to remaining
+// values.
+        while (!ops.empty()) {
+            double val2 = values.top();
+            values.pop();
+
+           double val1 = values.top();
+            values.pop();
+
+            char op = ops.top();
+            ops.pop();
+
+            values.push(applyOp(val1, val2, op));
+        }
+
+        // Top of 'values' contains result, return it.
+    
+        return values.top();
+    }
+     
  
+
 
 
 static std::string enteredText = "";
@@ -86,7 +223,7 @@ void View::basic_calculator() {
     // Display entered text
     // Stores entered text
     ImVec2 windowSize1 = ImGui::GetWindowSize();
-    float inputTextWidth = enteredText.length() * 7;
+    float inputTextWidth =(float) (enteredText.length() * 7);
     float posX = (windowSize1.x - 40 - inputTextWidth);
     ImGui::SetCursorPosX(posX);
 
@@ -118,7 +255,7 @@ void View::basic_calculator() {
     const float startY = windowSize.y - totalHeight;
 
     const std::vector<std::vector<std::string>> symbols = { {"C","%","Back","/"},
-                                                                {"7","8","9","x"},
+                                                                {"7","8","9","*"},
                                                                 {"4","5","6","-"},
                                                                 {"1","2","3","+"},
                                                                 {"00","0",".","="} };
@@ -157,8 +294,27 @@ void View::basic_calculator() {
 
                 }
                 else if (row == 4 && col == 2) {
-                    if (!(enteredText.find('.') != std::string::npos)) {
-                        enteredText += buttonText, symbols[row][col];
+
+                    //char targetChar = '.';
+                    //size_t startPos = i;  // Start position
+                    //size_t endPos = enteredText.length()-1;   // End position
+
+                    //// Find the targetChar between startPos and endPos
+                    //size_t foundPos = text.find(targetChar, startPos);
+
+                    //if (foundPos != std::string::npos && foundPos < endPos) {
+                    //    std::cout << "Found '" << targetChar << "' at position " << foundPos << std::endl;
+                    //}
+                    //else {
+                    //    std::cout << "'" << targetChar << "' not found between positions " << startPos << " and " << endPos << std::endl;
+                    //}
+
+                    //int i = enteredText.length();
+                    
+                        if (!(enteredText.find('.') != std::string::npos)) {
+                            enteredText += buttonText; //symbols[row][col];
+
+                        
                     }
                 }
                 else if (enteredText.length() > 0 && operators.find(enteredText.back()) != std::string::npos && operators.find(symbols[row][col].back()) != std::string::npos) {
@@ -171,7 +327,7 @@ void View::basic_calculator() {
                 else {
 
 
-                    enteredText += buttonText , symbols[row][col];
+                    enteredText += buttonText; //symbols[row][col];
 
 
                 }
@@ -250,7 +406,7 @@ void View::sci_calculator() {
     ImGui::SetWindowSize(currentSize);
 
     // End the window
-    ImGui::End();
+    ImGui::End(); 
 
 
 

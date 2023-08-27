@@ -1,4 +1,3 @@
-
 #include "homeGUI.h"
 #include "imgui.h"
 #include "WindowDrawer.h"
@@ -339,23 +338,23 @@ int homeGUI::run()
    //ImFont* font = io.Fonts->AddFontFromFileTTF("C:\Project\Home\Home\static\OpenSans_Condensed-Bold.ttf", 18.0f);
 
     
-        ImFont* font = io.Fonts->AddFontFromFileTTF("C:\\Home\\Home\\static\\OpenSans-SemiBold.ttf", 16.0f);
-      
+    //    ImFont* font = io.Fonts->AddFontFromFileTTF($(ProjectDir)static+"/OpenSans-SemiBold.ttf", 16.0f);
+    //  
 
-        IM_ASSERT(font != nullptr);
-        
+    //    IM_ASSERT(font != nullptr);
+    //    
 
-        // Apply changes to the font texture
-        ImGui::GetIO().Fonts->Build();
+    //    // Apply changes to the font texture
+    //    ImGui::GetIO().Fonts->Build();
 
-    try {
-        
-        ImGui::GetIO().FontDefault = font;
-    }
-    catch (std::exception& e) {
-        std::cout << e.what() << std::endl;
-    }
-    
+    //try {
+    //    
+    //    ImGui::GetIO().FontDefault = font;
+    //}
+    //catch (std::exception& e) {
+    //    std::cout << e.what() << std::endl;
+    //}
+    //
 
     // Our state
     bool show_demo_window = true;
