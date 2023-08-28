@@ -69,6 +69,11 @@ void Node::move()
 	if (isHovering && ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
 		this->locked = !this->locked;
 	}
+
+	if (this->is_locked() && ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
+		this->locked = true;
+	}
+
 	if (!this->is_locked()) {
 		boxPos.x += ImGui::GetIO().MouseDelta.x * this->rateOfFloat;
 		boxPos.y += ImGui::GetIO().MouseDelta.y * this->rateOfFloat;
