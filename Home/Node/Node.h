@@ -26,6 +26,7 @@ private:
 	unsigned int				colActive			{ IM_COL32(0x00, 0x66, 0xcc, 0xaa) };
 	unsigned int				borderCol			{ IM_COL32(0x00, 0x00, 0x00, 0xff) };
 	bool						moveable			{ true };
+	ImVec2						shift				{ 0, 0 };
 	Point						begin;
 	Point						end;
 

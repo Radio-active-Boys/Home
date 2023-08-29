@@ -1,7 +1,7 @@
 #include "Node.h"
 #include "Coordinate_Math_2D.h"
 
-
+#include<iostream>
 
 void Node::drawLine()
 {
@@ -57,7 +57,8 @@ void Node::draw()
 }
 
 void Node::move()
-{
+{	
+	
 	ImVec2 boxPos = this->begin.Vec2();
 	ImVec2 mousePos = ImGui::GetMousePos();
 	ImVec2 boxSize(this->width, this->height);
@@ -68,6 +69,8 @@ void Node::move()
 
 	if (isHovering && ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
 		this->locked = !this->locked;
+		this->shift.x = boxPos.x - mousePos.x;
+		this->shift.y = boxPos.y - mousePos.y;
 	}
 
 	if (this->is_locked() && ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
@@ -75,8 +78,11 @@ void Node::move()
 	}
 
 	if (!this->is_locked()) {
-		boxPos.x += ImGui::GetIO().MouseDelta.x * this->rateOfFloat;
-		boxPos.y += ImGui::GetIO().MouseDelta.y * this->rateOfFloat;
+		/*boxPos.x += ImGui::GetIO().MouseDelta.x * this->rateOfFloat;
+		boxPos.y += ImGui::GetIO().MouseDelta.y * this->rateOfFloat;*/
+		boxPos.x = mousePos.x + this->shift.x;
+		boxPos.y = mousePos.y + this->shift.y;
+		std::cout << shift.x << "\t" << shift.y << std::endl;
 	}
 
 	this->begin = Point(boxPos.x, boxPos.y);
