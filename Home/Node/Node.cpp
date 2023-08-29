@@ -1,7 +1,11 @@
 #include "Node.h"
 #include "Coordinate_Math_2D.h"
 
+
+#ifdef _DEBUG
 #include<iostream>
+#endif
+
 
 void Node::drawLine()
 {
@@ -78,11 +82,8 @@ void Node::move()
 	}
 
 	if (!this->is_locked()) {
-		/*boxPos.x += ImGui::GetIO().MouseDelta.x * this->rateOfFloat;
-		boxPos.y += ImGui::GetIO().MouseDelta.y * this->rateOfFloat;*/
 		boxPos.x = mousePos.x + this->shift.x;
 		boxPos.y = mousePos.y + this->shift.y;
-		std::cout << shift.x << "\t" << shift.y << std::endl;
 	}
 
 	this->begin = Point(boxPos.x, boxPos.y);
