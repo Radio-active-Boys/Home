@@ -63,6 +63,9 @@
     <ClInclude Include="Node\Coordinate_Math_2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\imgui.cpp">
@@ -116,6 +119,12 @@
     <ClCompile Include="Node\Coordinate_Math_2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="views\src\HomePage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="views\src\ClassificationWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="static\OpenSans_Condensed-Bold.ttf" />
@@ -157,5 +166,16 @@
     <Font Include="static\OpenSans-SemiBoldItalic.ttf" />
     <Font Include="static\OpenSans-VariableFont_wdth,wght.ttf" />
     <Font Include="static\ThickCalibri-BPDd.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="media\1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="media\3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

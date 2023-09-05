@@ -2,7 +2,7 @@
 
 #include "WindowDrawer.h"
 
- 
+View::all_view View::activeView = View::HOME;
 
 
 bool WindowDrawer::create_window() {
@@ -12,10 +12,15 @@ bool WindowDrawer::create_window() {
     //ImGui::ShowDemoWindow(open);
 
 
- 
-    View::sci_calculator();
-    View::basic_calculator();
-    View::show_window();
+    if(!View::activeView)
+        View::home();
+    else if(View::activeView == View::CALCULATOR)
+        View::basic_calculator();
+    else if (View::activeView == View::WINDOW)
+        View::show_window();
+    else if (View::activeView == View::CLASSIFIER)
+        View::ml_window();
+    //View::show_window();
 	
 
     

@@ -11,6 +11,11 @@ public:
 
 	};
 
-	static COLOR_STYLE m_color_style;
+	enum APP_STATUS {
+		ON,
+		OFF
+	};
 
+	static COLOR_STYLE m_color_style;
+	static APP_STATUS m_status;
 };
