@@ -9,8 +9,8 @@ void View::show_window()
 	ImGui::Begin("New");
     
     newnode.draw();
-    ad.draw();
-
+    /*ad.draw();
+    Node::drawLine();*/
 
 	ImGui::End();
 
