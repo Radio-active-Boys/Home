@@ -220,11 +220,6 @@
     <Font Include="static\ThickCalibri-BPDd.otf" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Node\Node.vcxproj">
-      <Project>{d278df03-1fbf-48a7-8769-0cb94747204a}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="media\1.png" />
     <Image Include="media\2.png" />
     <Image Include="media\3.png" />

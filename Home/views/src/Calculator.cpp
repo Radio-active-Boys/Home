@@ -3,13 +3,20 @@
 using namespace std;
 // Function to find precedence of
 // operators.
+
+
+// start position 
+size_t pastPos = 0;
+
+
 double precedence(char op) {
     if (op == '+' || op == '-')
         return 1;
-    if (op == '*' || op == '/')
+    if (op == '*' || op == '/' || op == '%') // Include the '%' operator
         return 2;
     return 0;
 }
+
 
 // Function to perform arithmetic operations.
 double applyOp(double a, double b, char op) {
@@ -18,9 +25,11 @@ double applyOp(double a, double b, char op) {
     case '-': return a - b;
     case '*': return a * b;
     case '/': return a / b;
+    case '%': return a * (b / 100); // Calculate the percentage
     default: return 0;
     }
 }
+
 
 // Evaluate expression  
 double evaluateExpression(const std::string& expression) {
@@ -56,12 +65,13 @@ double evaluateExpression(const std::string& expression) {
             while (i < expression.length() &&
                 (isdigit(expression[i]) || (expression[i] == '.')))
             {
-                if (expression[i] == '.' && !decimalArrive ){
+                if (expression[i] == '.' && !decimalArrive) {
                     i++;
                     decimalArrive = true;
                 }
-                   if (decimalArrive){ j--;
-                    val +=  (expression[i] - '0')*pow(10,j);
+                if (decimalArrive) {
+                    j--;
+                    val += (expression[i] - '0') * pow(10, j);
                     i++;
                 }
                 else {
@@ -124,28 +134,28 @@ double evaluateExpression(const std::string& expression) {
             ops.push(expression[i]);
         }
     }
-        // Entire expression has been parsed at this
+    // Entire expression has been parsed at this
 // point, apply remaining ops to remaining
 // values.
-        while (!ops.empty()) {
-            double val2 = values.top();
-            values.pop();
+    while (!ops.empty()) {
+        double val2 = values.top();
+        values.pop();
 
-           double val1 = values.top();
-            values.pop();
+        double val1 = values.top();
+        values.pop();
 
-            char op = ops.top();
-            ops.pop();
+        char op = ops.top();
+        ops.pop();
 
-            values.push(applyOp(val1, val2, op));
-        }
-
-        // Top of 'values' contains result, return it.
-    
-        return values.top();
+        values.push(applyOp(val1, val2, op));
     }
-     
- 
+
+    // Top of 'values' contains result, return it.
+
+    return values.top();
+}
+
+
 
 
 
@@ -223,7 +233,7 @@ void View::basic_calculator() {
     // Display entered text
     // Stores entered text
     ImVec2 windowSize1 = ImGui::GetWindowSize();
-    float inputTextWidth =(float) (enteredText.length() * 7);
+    float inputTextWidth = (float)(enteredText.length() * 7);
     float posX = (windowSize1.x - 40 - inputTextWidth);
     ImGui::SetCursorPosX(posX);
 
@@ -290,38 +300,56 @@ void View::basic_calculator() {
 
                 }
                 else if (row == 0 && col == 0) {
+                    pastPos = 0;
                     enteredText = "";
 
                 }
                 else if (row == 4 && col == 2) {
 
-                    //char targetChar = '.';
-                    //size_t startPos = i;  // Start position
-                    //size_t endPos = enteredText.length()-1;   // End position
 
-                    //// Find the targetChar between startPos and endPos
-                    //size_t foundPos = text.find(targetChar, startPos);
+                    size_t newPos = enteredText.length() - 1;   // End position
 
-                    //if (foundPos != std::string::npos && foundPos < endPos) {
-                    //    std::cout << "Found '" << targetChar << "' at position " << foundPos << std::endl;
-                    //}
-                    //else {
-                    //    std::cout << "'" << targetChar << "' not found between positions " << startPos << " and " << endPos << std::endl;
-                    //}
 
-                    //int i = enteredText.length();
-                    
-                        if (!(enteredText.find('.') != std::string::npos)) {
-                            enteredText += buttonText; //symbols[row][col];
+                    if (!(enteredText.find('.') != std::string::npos)) {
 
-                        
+                        enteredText += buttonText; //symbols[row][col];
+
+
                     }
+                    else {
+                        // Find the targetChar between startPos and endPos  operators.find(enteredText[i]) != std::string::npos
+                        for (int i = pastPos + 1; i <= newPos; i++) {
+                            if (enteredText[i] == '+' || enteredText[i] == '-' || enteredText[i] == '*' || enteredText[i] == '/' || enteredText[i] == '%') {
+
+                                enteredText += buttonText; //symbols[row][col];
+
+                                pastPos = newPos + 1;
+                                break; // Stop searching once an operator character is found
+                            }
+                        }
+                    }
+
+
+                    /* size_t foundPos = text.find(targetChar, startPos);
+
+                     if (foundPos != std::string::npos && foundPos < endPos) {
+                         std::cout << "Found '" << targetChar << "' at position " << foundPos << std::endl;
+                     }
+                     else {
+                         std::cout << "'" << targetChar << "' not found between positions " << startPos << " and " << endPos << std::endl;
+                     }
+
+                     int i = enteredText.length();
+
+                    */
                 }
                 else if (enteredText.length() > 0 && operators.find(enteredText.back()) != std::string::npos && operators.find(symbols[row][col].back()) != std::string::npos) {
 
                 }
                 else if (row == 4 && col == 3) {
-                    result =  evaluateExpression(enteredText) ;
+                    pastPos = 0;
+                    result = evaluateExpression(enteredText);
+
                     enteredText = std::to_string(result);
                 }
                 else {
@@ -401,15 +429,26 @@ void View::sci_calculator() {
 
 
 
+    // Display entered text using the InputText function
+    if (ImGui::InputText("##InputText", txt, sizeof(txt), ImGuiInputTextFlags_EnterReturnsTrue)) {
+        // Handle text input changes here
+        enteredText = txt; // Update enteredText with the new input
+    }
 
-    // Update the window size
+    // ...
+
+
+// ...
+
+
+
+// Update the window size
     ImGui::SetWindowSize(currentSize);
 
     // End the window
-    ImGui::End(); 
+    ImGui::End();
 
 
 
 
 }
-
