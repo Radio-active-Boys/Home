@@ -427,18 +427,18 @@ void View::sci_calculator() {
         currentSize.y = 400;
     }
 
+ 
 
+        // Display entered text using the InputText function
+        if (ImGui::InputText("##InputText", txt, sizeof(txt), ImGuiInputTextFlags_EnterReturnsTrue)) {
+            // Handle text input changes here
+            enteredText = txt; // Update enteredText with the new input
+        }
 
-    // Display entered text using the InputText function
-    if (ImGui::InputText("##InputText", txt, sizeof(txt), ImGuiInputTextFlags_EnterReturnsTrue)) {
-        // Handle text input changes here
-        enteredText = txt; // Update enteredText with the new input
-    }
+        // ...
 
+      
     // ...
-
-
-// ...
 
 
 
