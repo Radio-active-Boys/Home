@@ -1,7 +1,7 @@
 #include "homeGUI.h"
 #include "imgui.h"
 #include "WindowDrawer.h"
-
+#include "Config.h"
 
 
 
@@ -371,6 +371,10 @@ int homeGUI::run()
     bool done = false;
     while (!done)
     {
+        if (ConfigGUI::m_status == ConfigGUI::OFF)
+            done = true;
+
+
         // Poll and handle messages (inputs, window resize, etc.)
         // See the WndProc() function below for our to dispatch events to the Win32 backend.
         MSG msg;
@@ -398,7 +402,7 @@ int homeGUI::run()
         ImGui::SetNextWindowDockID(dockspace_id, ImGuiCond_FirstUseEver);
 
 
-        
+
         bool on = WindowDrawer::create_window();
         if (!on) done=true;
 

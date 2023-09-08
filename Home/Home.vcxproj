@@ -152,6 +152,7 @@
     <ClInclude Include="include\imstb_truetype.h" />
     <ClInclude Include="helpers\include\Log.h" />
     <ClInclude Include="helpers\include\WindowDrawer.h" />
+    <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="Node\Coordinate_Math_2D.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="views\include\View.h" />
@@ -172,7 +173,9 @@
     <ClCompile Include="src\imgui_widgets.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="helpers\src\WindowDrawer.cpp" />
+    <ClCompile Include="views\src\ClassificationWindow.cpp" />
     <ClCompile Include="views\src\Calculator.cpp" />
+    <ClCompile Include="views\src\HomePage.cpp" />
     <ClCompile Include="views\src\View.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +223,11 @@
     <ProjectReference Include="..\Node\Node.vcxproj">
       <Project>{d278df03-1fbf-48a7-8769-0cb94747204a}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="media\1.png" />
+    <Image Include="media\2.png" />
+    <Image Include="media\3.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

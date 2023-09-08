@@ -7,26 +7,26 @@
 #endif
 
 
-//
-//void Node::drawLine()
-//{
-//	float len = 100.0;
-//	std::vector<double> vec;
-//	int k = 0;
-//	for (double i{}; i < 1; i += (1.0 / len)) {
-//		vec.push_back(i);
-//		k++;
-//	}
-//	BezierCurveCubic bc(Point(100, 100), Point(ImGui::GetMousePos().x, ImGui::GetMousePos().y));
-//	Point prev(100, 100);
-//	Point curr(100, 100);
-//	for (size_t i{}; i < len; i++) {
-//		curr = bc.interpolate(vec[i]);
-//		ImGui::GetWindowDrawList()->AddLine(curr.Vec2(), prev.Vec2(), IM_COL32(255, 0, 0, 255),3.0);
-//		prev = curr;
-//	}
-//
-//}
+
+void Node::drawLine()
+{
+	float len = 100.0;
+	std::vector<double> vec;
+	int k = 0;
+	for (double i{}; i < 1; i += (1.0 / len)) {
+		vec.push_back(i);
+		k++;
+	}
+	BezierCurveCubic bc(Point(100, 100), Point(ImGui::GetMousePos().x, ImGui::GetMousePos().y));
+	Point prev(100, 100);
+	Point curr(100, 100);
+	for (size_t i{}; i < len; i++) {
+		curr = bc.interpolate(vec[i]);
+		ImGui::GetWindowDrawList()->AddLine(curr.Vec2(), prev.Vec2(), IM_COL32(255, 0, 0, 255),3.0);
+		prev = curr;
+	}
+
+}
 
 Node::Node()
 {	
@@ -75,6 +75,7 @@ void Node::unlock()
 void Node::draw()
 {
 	this->move();
+
 	if (!this->is_locked())
 		ImGui::GetWindowDrawList()->AddRectFilled(this->begin.Vec2(), this->end.Vec2(), this->colActive,this->nodeRounding);
 	else

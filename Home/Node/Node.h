@@ -9,7 +9,7 @@
 class Node {
 
 public:
-	//static void drawLine();
+	static void drawLine();
 	Node();
 	Node(unsigned int numOfParam, unsigned int input, ImVec2 start, std::vector<std::string> *params);
 	void lock();
